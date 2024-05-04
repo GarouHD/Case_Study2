@@ -5,6 +5,7 @@ from sklearn.cluster import KMeans
 import functools
 from sklearn.metrics.cluster import adjusted_rand_score
 
+
 def hh_mm_ss2seconds(hh_mm_ss):
     return functools.reduce(lambda acc, x: acc*60 + x, map(int, hh_mm_ss.split(':')))
 
