@@ -76,6 +76,6 @@ def predictor(csv_path):
 if __name__=="__main__":
     get_baseline_score()
     get_predictor_score()
-    #evaluate()
+    evaluate()
 
 
