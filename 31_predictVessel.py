@@ -1,16 +1,10 @@
 import pandas as pd
-import numpy as np
-from sklearn import preprocessing
 from sklearn.cluster import KMeans
-import functools
-from sklearn.metrics.cluster import adjusted_rand_score
 from sklearn import preprocessing
 from sklearn.cluster import AgglomerativeClustering
 import functools
 from sklearn.metrics.cluster import adjusted_rand_score
 from sklearn.preprocessing import StandardScaler
-from itertools import combinations
-import matplotlib.pyplot as plt
 
 
 def hh_mm_ss2seconds(hh_mm_ss):
@@ -71,7 +65,8 @@ def predictor(csv_path):
     X = scaler.fit_transform(X)
 
     # Create agglomerative clustering model with optimal param
-    model = AgglomerativeClustering(n_clusters=20, linkage='complete', metric='cosine')
+    # model = AgglomerativeClustering(n_clusters=20, linkage='complete', metric='cosine')
+    model = AgglomerativeClustering(n_clusters=24, linkage='average', metric='cosine')
 
     # predict
     labels_pred = model.fit_predict(X)
@@ -81,6 +76,6 @@ def predictor(csv_path):
 if __name__=="__main__":
     get_baseline_score()
     get_predictor_score()
-    evaluate()
+    #evaluate()
 
 
